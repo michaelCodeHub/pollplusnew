@@ -1,0 +1,15 @@
+
+.addquestion{
+
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.addButton{
+margin-bottom: 20px;
+}
+
+@media (min-width: 736px) {
+.margin-left{
+  margin-left: 10px;
+}
+}

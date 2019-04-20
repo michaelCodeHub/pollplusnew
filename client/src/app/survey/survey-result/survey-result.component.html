@@ -1,0 +1,48 @@
+<br/>
+<div class="container result">
+    <h1>{{survey.surveyTitle}}</h1>
+
+    <hr/>
+
+  <div class="d-none d-sm-block d-md-block">
+    <div class="row">
+      <div class="col-lg-4">
+          <p class="font-weight-bold">Question</p>
+      </div>
+        <div class="col-lg-2">
+            <p class="font-weight-bold">Option1</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="font-weight-bold">Option2</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="font-weight-bold">Option3</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="font-weight-bold">Option4</p>
+        </div>
+    </div>
+  </div>
+    
+  <hr/>
+
+  <div *ngFor="let question of questions;  let i = index">
+      <div class="row">
+        <div class="col-lg-4">
+            <p class="font-weight-bold">{{i+1}}) {{ question.question }}</p>
+        </div>
+          <div class="col-lg-2">
+              <p> ({{option1Count[i]}}) {{question.option1}}</p>
+          </div>
+          <div class="col-lg-2">
+              <p> ({{option2Count[i]}}) {{question.option2}}</p>
+          </div>
+          <div class="col-lg-2">
+              <p> ({{option3Count[i]}}) {{question.option3}}</p>
+          </div>
+          <div class="col-lg-2">
+              <p> ({{option4Count[i]}}) {{question.option4}}</p>
+          </div>
+      </div>
+      <hr/>
+</div>

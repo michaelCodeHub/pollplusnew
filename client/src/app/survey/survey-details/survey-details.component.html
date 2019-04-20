@@ -1,0 +1,96 @@
+<!-- Content for the Details Page -->
+<div class="container addquestion">
+  <div class="row">
+    <section class="col-md-6" style="margin: 0px auto;">
+      <br/>
+      <br/>
+      <h1>{{ title }}</h1>
+
+      <form class="form" (submit)="onDetailsPageSubmit()">
+        <div class="form-group">
+          <label for="FirstNameTextField">Title</label>
+          <input type="text" class="form-control" id="TitleTextField" placeholder="Enter a title" name="title"
+            [(ngModel)]="survey.surveyTitle" value="{{ survey.surveyTitle }}" required>
+        </div>
+
+        <div class="row">
+
+          <div class="form-group col-lg-6">
+            <label for="FromTextField">From (MM/DD/YYYY)</label>
+            <input type="text" class="form-control" id="FromTextField" placeholder="From" name="from"
+              [(ngModel)]="survey.surveyFrom" value="{{ survey.surveyFrom }}" required>
+          </div>
+
+
+          <div class="form-group col-lg-6">
+            <label for="ToTextField">To(MM/DD/YYYY)</label>
+            <input type="text" class="form-control" id="ToTextField" placeholder="To" name="from"
+              [(ngModel)]="survey.surveyTill" value="{{ survey.surveyTill }}" required>
+          </div>
+
+
+        </div>
+        <!-- <mat-form-field>
+                    <input
+                    [(ngModel)]="survey.surveyTill"
+                    value="{{ survey.surveyTill }}"
+                    matInput [matDatepicker]="picker"
+                    placeholder="Choose a date" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field> -->
+
+        <table>
+          <tr *ngFor="let question of questions; let i = index">
+            <section id="quesion" name="">
+              <div class="form-group">
+                <hr />
+                <label for="questionField">Question - {{i+1}}</label>
+                <input type="text" class="form-control" id="questionField" placeholder="Enter a Question"
+                  name="question{{i}}" [(ngModel)]="question.question" value="{{ question.question }}" required>
+                <br />
+                <div class="row">
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="optionField" placeholder="Option 1" name="question{{i}}"
+                      [(ngModel)]="question.option1" value="{{ question.option1 }}" required>
+                  </div>
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="optionField" placeholder="Option 2" name="question{{i}}"
+                      [(ngModel)]="question.option2" value="{{ question.option2}}" required>
+                  </div>
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="optionField" placeholder="Option 3" name="question{{i}}"
+                      [(ngModel)]="question.option3" value="{{ question.option3}}" required>
+                  </div>
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="optionField" placeholder="Option 4" name="question{{i}}"
+                      [(ngModel)]="question.option4" value="{{ question.option4}}" required>
+                  </div>
+
+                </div>
+                <br/>
+                    <a [routerLink]="" (click)="onDelete(i)" class="btn btn-outline-danger btn-sm col-lg-5 margin-left"> Delete Question</a>
+
+
+
+              </div>
+            </section>
+
+          </tr>
+          <a [routerLink]="" (click)="onAddNew()" class="btn btn-outline-success btn-sm col-lg-5 margin-left">Add new question</a>
+
+        </table>
+
+        <br>
+        <div class="container row">
+            <button type="submit" class="btn btn-primary col-lg-5">
+                {{ title }}</button>
+
+              <a routerLink="/survey/list" class="btn btn-warning col-lg-5 margin-left">
+                Cancel</a>
+        </div>
+      </form>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<header style="height: 100vh;">
+  <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      </div>
+      <div class="carousel-item">
+      </div>
+      <div class="carousel-item">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="our-mission container">
+  <h1>Our Mission</h1>
+  <div class="row">
+    <div class="col-lg-12" style="line-height: 30px;">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="myImage2">
+
+  </div>
+</section>
+
+<section class="our-mission container">
+    <h1>Our Vision</h1>
+    <div class="col-lg-12" style="line-height: 30px;">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+      <div class="myImage">
+
+      </div>
+    </section>
+
+<script>
+  $(document).ready(function () {
+    $('#carouselFade').carousel({
+      interval: 200
+    })
+  });
+
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+
+  });
+
+  $(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+
+</script>

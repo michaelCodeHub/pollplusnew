@@ -1,0 +1,42 @@
+<br/>
+<div class="container questions">
+  <div class="row">
+      <div class="col-lg-12">
+          <h1>{{survey.surveyTitle}}</h1>
+
+
+          <br>
+
+          <form class="form" (submit)="onSurveySubmit()">
+            <div *ngFor="let question of questions;  let i = index">
+              <h6>{{i+1}}) {{ question.question }}</h6>
+              <div class="row">
+                  <div class="col-lg-3">
+                    <input name="mike{{i}}" type="radio" id="{{answers[i]}}" [(ngModel)]="answers[i].answer" value="1"> {{question.option1}}<br>
+                  </div>
+                  <div class="col-lg-3">
+                    <input name="mike{{i}}" type="radio" id="{{answers[i]}}" [(ngModel)]="answers[i].answer" value="2"> {{question.option2}}<br>
+                  </div>
+                  <div class="col-lg-3">
+                    <input name="mike{{i}}" type="radio" id="{{answers[i]}}" [(ngModel)]="answers[i].answer" value="3"> {{question.option3}}<br>
+                  </div>
+                  <div class="col-lg-3">
+                    <input name="mike{{i}}" type="radio" id="{{answers[i]}}" [(ngModel)]="answers[i].answer" value="4"> {{question.option4}}<br>
+                  </div>
+              </div>
+              <hr/>
+            </div>
+
+            <div class="container row">
+                <button type="submit" class="btn btn-primary">
+                    Submit Survey</button>
+
+                  <a routerLink="/survey/list" class="btn btn-warning margin-left">
+                    Cancel</a>
+            </div>
+
+          </form>
+
+      </div>
+  </div>
+</div>

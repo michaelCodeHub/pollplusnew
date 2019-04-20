@@ -1,0 +1,18 @@
+/* .login{
+height: 80vh;
+} */
+
+.inside{
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+@media (max-width: 736px) {
+
+  .inside{
+    margin:10px;
+    margin-top: 20vh;
+  }
+  }

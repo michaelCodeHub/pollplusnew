@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/"><img class="header-logo" src="../../../assets/images/logo.jpeg" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Contact Us</a>
+      </li> -->
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/survey/list">Active Surveys</a>
+        </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto navbar-right">
+
+
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/survey/add">Create Survey</a>
+            </li>
+
+
+
+
+        <li *ngIf="isLoggedIn()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+              Welcome, {{ user.displayName }}
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" routerLink="/survey/list/{{ user.username }}" name="mySurvey">My Surveys</a>
+                <a class="dropdown-item" routerLink="/editprofile" name="editProfile">Edit Profile</a>
+                <a class="dropdown-item"  *ngIf="isLoggedIn()" (click)="onLogoutClick()" routerLink="/logout" >
+                  Logout</a>
+              </div>
+          </a>
+
+      </li>
+      <li *ngIf="!isLoggedIn()" class="nav-item"><a routerLink="/login" class="nav-link">
+          Login</a></li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,42 @@
+<br/>
+
+<div class="container surveyList">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>{{title}}</h1>
+
+
+      <br>
+
+      <div class="">
+        <hr/>
+
+        <div *ngFor="let survey of surveys; let i = index">
+          <div class="row">
+            <div class="col-lg-9">
+
+                <h2 >{{survey.surveyTitle}}</h2>
+                <p>Ends in {{ numOfDays[i] }} days.</p>
+            </div>
+              <div *ngIf="isMySurvey" class="col-lg-3 buttons">
+                  <a routerLink="/survey/result/{{ survey._id }}" class="btn btn-primary"><i class="fas fa-chart-pie"></i>
+                    </a>
+                    <a routerLink="/survey/list/delete/{{ survey._id }}" (click)="onDeleteClick()" class="btn btn-danger"><i
+                      class="fas fa-trash-alt"></i></a>
+                      <!-- <a routerLink="/survey/edit/{{ survey._id }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>
+                        </a> -->
+              </div>
+
+              <div *ngIf="!isMySurvey" class="col-lg-3 buttons">
+                  <a routerLink="/survey/questions/{{ survey._id }}" class="btn btn-primary">
+                    Participate</a>
+                </div>
+          </div>
+
+        <hr/>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
